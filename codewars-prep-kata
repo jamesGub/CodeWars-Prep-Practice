@@ -1,0 +1,69 @@
+# Code Wars Questions:
+ Doing these in Python, hopefully it comes back to me. 
+ 
+ Prompt #1: 
+ A hero is on his way to the castle to complete his mission. 
+ However, he's been told that the castle is surrounded with a couple of powerful dragons! 
+ each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. 
+ Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, 
+ will he survive?
+
+Return True if yes, False otherwise :)
+
+Code: 
+def hero(bullets, dragons): 
+  bullets_needed = dragons * 2
+  
+  if bullest >= bullets_needed:
+    return True
+   else: 
+    return False
+    
+ Works
+ 
+ 
+ Prompt #2: 
+ Given a non-negative integer, 3 for example, 
+ return a string with a murmur: "1 sheep...2 sheep...3 sheep...".
+ Input will always be valid, i.e. no negative integers.
+ 
+ def count_sheep(n):
+    result = ""
+    
+    for i in range(1, n+1):
+        result += str(i) + " sheep..."
+        
+    return result
+    
+ Works
+ 
+ Prompt #3: 
+ Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+For example,
+
+[True,  True,  True,  False,
+  True,  True,  True,  True ,
+  True,  False, True,  False,
+  True,  False, False, True ,
+  True,  True,  True,  True ,
+  False, False, True,  True]
+
+The correct answer would be 17.
+
+Code: 
+def count_sheeps(sheep):
+    count = 0
+    
+    for sheeps in sheep: 
+        if sheeps: 
+            count += 1
+            
+    return count
+    pass
+    
+Works
+
+
+ 
+        
