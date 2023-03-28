@@ -544,3 +544,135 @@ def hero(bullets, dragons):
     else:
         return False
         
+"""
+7 Kyu
+Shortest Word
+Python:
+"""
+#Code
+def find_short(s):
+    #length()?
+    #min()?
+    #sort()? 
+    #split() turns the strings into a list, then we use the sorted 
+    #method defined by length on the list, return the length of the 
+    #first word.
+    s_list = s.split()
+    shortest_word = sorted(s_list, key=len)
+    return len(shortest_word[0])
+"""
+7 Kyu 
+Disemvowel Trolls
+Python: 
+"""
+#Code
+def disemvowel(string_):
+    #Strip()?
+    #Special remove methods?
+    #Cut out all vowels then return the string
+    #as it is.
+    #Set the vowels to a tuple
+    #Use a for loop, if i is not in vowels
+    no_vows = ""
+    for i in string_:
+        if i not in ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U"):
+            no_vows = no_vows + i
+    return no_vows
+"""
+6 Kyu
+Detect Panagram
+Python:
+"""
+#Code
+def is_pangram(s):
+    #Use a for loop to check for the whole alphabet in the string
+    
+    #Store the alphabet in a variable
+    greek = "abcdefghijklmnopqrstuvwxyz"
+    #Use a for loop to track for every letter
+    for i in greek: 
+        #If all letters are not in the string, its not a panagram
+        if i not in s.lower():
+            return False
+    #If yes, true
+    return True
+"""
+8 Kyu
+Beginner - Reduce but Grow
+Python: 
+"""
+#Code
+def grow(arr):
+    res = 1
+    for i in arr: 
+            res = res * i
+    return res
+"""
+7 Kyu
+String ends with? 
+Python:
+"""
+#Code
+def solution(text, ending):
+    #Use for loop to see if ending is in text
+    #Possible indexing? 
+    #If the ending is there, return true
+    #Endsiwthmethod
+    
+    enfin = text.endswith(ending)
+    return enfin
+    pass
+"""
+6 Kyu
+Break camelCase
+Python:
+"""
+#Code
+import re
+def solution(s)
+    return re.sub(r'([a-z])([A-Z])', r'\1 \2', s)
+"""
+8 Kyu
+Sentence Smash
+Python: 
+"""
+def smash(words):
+    return " ".join(words)
+"""
+8 Kyu
+Rock Paper Scissors!
+Python: 
+"""
+#Code
+def rps(p1, p2):
+    if p1 == "scissors" and p2 =="paper":
+        return "Player 1 won!"
+    elif p1 == "scissors" and p2 == "rock":
+        return "Player 2 won!"
+    elif p1 == "paper" and p2 == "rock":
+        return "Player 1 won!"
+    elif p1 == "paper" and p2 == "scissors":
+        return "Player 2 won!"
+    elif p1 =="rock" and p2 == "scissors":
+        return "Player 1 won!"
+    elif p1 == "rock" and p2 == "paper":
+        return "Player 2 won!"
+    else:
+        return "Draw!"
+ """
+ 8 Kyu
+ Basic Mathematical Operations
+ Python: 
+ """
+#Code
+def basic_op(operator, value1, value2):
+    if operator == "+": 
+        return value1 + value2
+    elif operator == "-":
+        return value1 - value2
+    elif operator == "*":
+        return value1 * value2
+    elif operator == "/": 
+        return value1 / value2
+    else:
+        return False
