@@ -676,3 +676,16 @@ def basic_op(operator, value1, value2):
         return value1 / value2
     else:
         return False
+ """
+ 7 Kyu
+ Isograms
+ Python:
+ """
+#Code
+def is_isogram(string):
+    string = string.lower()
+    
+    for i in range(len(string)):
+        if string.count(string[i]) > 1:
+            return False
+    return True
