@@ -689,3 +689,163 @@ def is_isogram(string):
         if string.count(string[i]) > 1:
             return False
     return True
+"""
+6 Kyu
+Counting Duplicates
+Python: 
+"""
+#Code
+def duplicate_count(text):
+    #For loop to iterate 
+    #Dictionary to store the amounts, 
+    #this will allow us to count the amount of dupes
+    #Check got alphabetic and numeric characters
+    
+    text = text.lower()
+    
+    dupes = {}
+    
+    for char in text:
+        if char.isalnum():
+            if char in dupes: 
+                dupes[char] += 1
+            else:
+                dupes[char] = 1
+        
+    count = 0
+    
+    for char in dupes: 
+        if dupes[char] > 1:
+            count += 1
+    return count
+"""
+7 kyu
+Sum of two lowest positive integers
+Python: 
+"""
+#Code 
+def sum_two_smallest_numbers(numbers):
+    #Start by sorting the array: sort()
+    #Add the indices for [0] andn [1]
+    
+    new_nums = numbers.sort()
+    
+    result = numbers[0] + numbers[1]
+    
+    return result
+"""
+8 kyu
+Opposite number
+Python: 
+"""
+#Code
+def opposite_number(number):
+    if number >= 0:
+        return number * -1
+    else:
+        return number * 1
+"""
+8 kyu
+Quarter of the year
+Python:
+"""
+#Code
+def quarter_of(month):
+    #month in range of 1-3, 4-6, 7-9, 10-12
+    if month in range(1,4):
+        return 1
+    elif month in range(4,7):
+        return 2
+    elif month in range(7,10):
+        return 3
+    elif month in range(10,13):
+        return 4
+"""
+7 Kyu
+You're a square!
+Python:
+"""
+#Code
+import math
+
+def is_square(n):    
+    if n >= 0: 
+        root = math.sqrt(n)
+        if int(root + 0.5) ** 2 == n: 
+            return True
+        else:
+            return False
+    if n < 0:
+        return False
+#Import math to use the sqrt() function
+#Set the square root of n to the root variable
+#Make sure the root is set to an integer, otherwise
+#you will return a float which is not a perfect square
+#if root + 0.5 times itself = n, return true
+#if not, return false
+#if negative return false, must be done outside of scope
+"""
+8 kyu
+Grasshopper - Grade book
+Python: 
+"""
+#Code
+def get_grade(s1, s2, s3):
+    summer = s1 + s2 + s3
+    avg = summer / 3
+    avg = int(avg)
+    
+    if avg >= 90 and avg <= 100:
+        return "A"
+    elif avg >= 80 and avg < 90:
+        return "B"
+    elif avg >= 70 and avg < 80:
+        return "C"
+    elif avg >= 60 and avg < 70:
+        return "D"
+    else:
+        return "F"
+"""
+6 kyu
+Count the smiley faces!
+Python:
+"""
+#Code
+def count_smileys(arr):
+    #Set smiley variable to 0 so we can count off it later
+    smiley = 0
+    
+    #Set valid components to a variable
+    valid_eyes = [":", ";"]
+    valid_nose = ["", "-", "~"]
+    valid_mouth = [")", "D"]
+    #Use a for loop to iterate the array and search for the valid characters
+    for smiles in arr: 
+        if len(smiles) == 2:
+            if smiles[0] in valid_eyes and smiles[1] in valid_mouth: 
+                smiley += 1
+        elif len(smiles) == 3:
+            if smiles[0] in valid_eyes and smiles[1] in valid_nose and smiles[2] in valid_mouth:
+                smiley += 1
+    return smiley
+
+#Check for the length and account for smiley faces with or without noses
+#If the length is 2, we can assume it has no nose, in which case, we check for the valid variables and add to the smiley count
+#If the length is 3, it has a nose, in which case, we do the same thing but this time at the 3 proper indices
+#Return the smiley count
+"""
+7 kyu
+List Filtering
+Python:
+"""
+#Code
+def filter_list(l):
+    #If strings are in l
+    #Return the list with no strings
+    wo_string = []
+    
+    for items in l:
+        if isinstance(items, (int, float)):
+            wo_string.append(items)
+        return wo_string
+    
