@@ -848,4 +848,206 @@ def filter_list(l):
         if isinstance(items, (int, float)):
             wo_string.append(items)
         return wo_string
+"""
+8 kyu
+Sum of positive
+Python:
+"""
+#Code
+def positive_sum(arr):
+    total = 0
+    for num in arr: 
+        if num > 0: 
+            total += num
+    return total
+"""
+8 kyu
+Third angle of a triangle
+Python:
+"""
+#Code 
+def other_angle(a, b):
+    return 180 - (a + b)
+#Sum is always 180, subtract a and b from 180 to find the third side
+"""
+6 kyu
+Your order, please
+Python:
+"""
+#Code
+def order(sentence):
+    #If the string is empty
+    if not sentence:
+        return ""
+    #Create an empty list to store the values
+    sen_emp = []
     
+    #Loop the numbers 1-9 that will appear in the string, determine the range
+    for number in range(1,10):
+        #Goes over the string by using split, looping over each word
+        for word in sentence.split():
+            #if the word contains a number, we append it to the empty list
+            if str(number) in word:
+                sen_emp.append(word)
+                
+    #Using join, we can put the sorted numbers into a string and combine with the list.
+    return " ".join(sen_emp)
+            
+"""
+7 kyu
+Find the stray number
+Python:
+"""
+#Code
+def stray(arr):
+    #return the one that does not match
+    #for loop
+    for num in arr:
+        #count the number of occurences of the number in the array
+        #if the count is not divisible by 2, that means it is the odd one out. 
+        if arr.count(num) % 2 != 0:
+            return num
+"""
+8 kyu
+Will you make it?
+Python:
+"""
+#Code
+def zero_fuel(distance_to_pump, mpg, fuel_left):
+    #return true if we have enough gas to the pump
+    #We have 2 gallons, with 25 miles per, and the nearest pump is 50 miles away.
+    
+    if mpg * fuel_left >= distance_to_pump:
+        return True
+    else:
+        return False
+"""
+8 Kyu
+Find the first non-consecutive number
+Python:
+"""
+#code
+def first_non_consecutive(arr):
+    for i in range(1, len(arr)):
+        if arr[i] - arr[i-1] != 1:
+            return arr[i]
+    return None
+"""
+7 kyu
+Binary Addition
+Python:
+"""
+#Code
+def add_binary(a,b):
+    sum = a + b
+    return bin(sum)[2:]
+#Bin() function returns the binary value, to get rid of the 0b
+#we slice the string by 2 by [2:]
+"""
+6 kyu
+Persistent Bugger.
+Python:
+"""
+#Code
+def persistence(n):
+    count = 0
+    while n >= 10:
+        product = 1
+        for digit in str(n):
+            product *= int(digit)
+        num = product
+        count += 1
+ """
+ 8 kyu
+ l1: Set Alarm
+ Python:
+ """
+#Code
+def set_alarm(employed, vacation):
+    if employed == True and vacation == True:
+        return False
+    elif employed == True and vacation == False:
+        return True
+    else:
+        return False
+    return count
+"""
+8 kyu
+Switch it Up!
+Python:
+"""
+#Code
+def switch_it_up(number):
+    #Case to go through each number
+    match number:
+        case 0:
+            return "Zero"
+        case 1:
+            return "One"
+        case 2:
+            return "Two"
+        case 3:
+            return "Three"
+        case 4:
+            return "Four"
+        case 5:
+            return "Five"
+        case 6: 
+            return "Six"
+        case 7:
+            return "Seven"
+        case 8:
+            return "Eight"
+        case 9:
+            return "Nine"
+"""
+6 kyu
+Take a Ten Minutes Walk
+Python:
+"""
+#code
+def is_valid_walk(walk):
+    #Each block takes 1 minute
+    #The walk needs to take exactly 10 minutes
+    #Array will never be empty
+    walky = len(walk)
+    
+    if walky != 10:
+        return False
+    
+    x, y = 0, 0
+    
+    for compass in walk:
+        if compass == "n":
+            y += 1
+        elif compass == "s":
+            y -= 1
+        elif compass == "e":
+            x += 1
+        elif compass == "w":
+            x -= 1
+            
+    if x == 0 and y == 0:
+        return True
+    else:
+        return False
+"""
+8 kyu
+Total amount of points
+Python:
+"""
+#Code
+def points(games):
+    points = 0
+    for matches in games: 
+        x, y = matches.split(":")
+        if int(x) > int(y):
+            points += 3
+        elif int(x) < int(y): 
+            points += 0
+        elif int(x) == int(y):
+            points += 1
+        
+    return points
+        
+        
