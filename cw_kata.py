@@ -1049,5 +1049,46 @@ def points(games):
             points += 1
         
     return points
+"""
+7 kyu
+Categorize New Member
+Python:
+"""
+#Code
+def open_or_senior(data):
+    #If age >= 55 and handicap > 7 in data, return senior
+    #Else return open
+    #loop through the list and determine the value for each 
+    #Empty list to put our results into
+    #Append will most likely need to be used
+    
+    members = []
+    #For loop somewhere here
+    for age, handicap in data:
+        if age >= 55 and handicap > 7: 
+            members.append("Senior")
+        else:
+            members.append("Open")
+    
+    return members
+"""
+6 kyu
+Multiples of 3 or 5
+Python:
+"""
+#Code
+def solution(number):
+    total = 0
+    
+    if number < 0:
+        return 0
+    
+    for i in range(number):
+        if i % 3 == 0 or i % 5 == 0:
+            total += i
+    
+    return total
+#To calculate multiples, evens, or odds, use modulus. If it returns
+#zero, then it is true. After this we add i to the total and return
         
         
