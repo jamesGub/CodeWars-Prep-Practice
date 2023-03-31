@@ -1183,3 +1183,89 @@ def cockroach_speed(s):
     speed_in_cm_per_sec = int(s * cm_per_sec)
     
     return speed_in_cm_per_sec 
+"""
+6 kyu
+Return an Octal
+Python:
+"""
+#Code
+def octal_permissions(permissions):
+    # Assign numerical values to each permission bit
+    perms = {'r': 4, 'w': 2, 'x': 1, '-': 0}
+    
+    # Create a list of numerical values for each permission string
+    nums = [perms[c] for c in permissions]
+    
+    # Compute the sum of numerical values for the user, group and others
+    user, group, other = nums[:3], nums[3:6], nums[6:]
+    octal = str(sum(user)*100 + sum(group)*10 + sum(other))
+    
+    return octal
+"""
+5 kyu
+Pagination Helper
+Python:
+"""
+#Codeclass PaginationHelper:
+    def __init__(self, collection, items_per_page):
+        self.collection = collection
+        self.items_per_page = items_per_page
+    
+    def item_count(self):
+        return len(self.collection)
+    
+    def page_count(self):
+        return (len(self.collection) + self.items_per_page - 1) // self.items_per_page
+    
+    def page_item_count(self, page_index):
+        if page_index < 0 or page_index >= self.page_count():
+            return -1
+        elif page_index == self.page_count() - 1:
+            return len(self.collection) % self.items_per_page or self.items_per_page
+        else:
+            return self.items_per_page
+    
+    def page_index(self, item_index):
+        if item_index < 0 or item_index >= len(self.collection):
+            return -1
+        else:
+            return item_index // self.items_per_page
+#The __init__() method takes in the array of values (collection) and the number of items per page (items_per_page) and stores them as instance variables.
+#The item_count() method simply returns the length of the collection array.
+#The page_count() method calculates the total number of pages required to display all the items in the collection, taking into account the items_per_page parameter.
+#The page_item_count() method takes in a page_index parameter and returns the number of items on the given page. If the page index is out of range, the method returns -1. If the page index corresponds to the last page, the method returns the remaining items (which may be less than items_per_page if the number of items in the collection is not evenly divisible by items_per_page).
+#The page_index() method takes in an item_index parameter and returns the page index that the item belongs to. If the item index is out of range, the method returns -1.
+""" 
+8 kyu
+Contamination 1 - string
+Python:
+"""
+#Code
+def infect_text(text, character):
+    if not text or not character:  # if either input is empty, return an empty string
+        return ""
+    mutated_text = character * len(text)  # create the mutated text by repeating the character
+    return mutated_text
+"""
+8 kyu
+Find out whether a shape is a cube
+Python:
+"""
+#Code
+def is_cube(volume, side):
+    if volume <= 0 or side <= 0:  # if either input is invalid, return false
+        return False
+    # calculate the length, width, and height of the cuboid
+    length = volume / (side ** 2)
+    width = side
+    height = side
+    # check if all sides are equal, within a small margin of error
+    return abs(length - width) < 1e-9 and abs(width - height) < 1e-9
+"""
+8 kyu
+My head is at the wrong end!
+Python:
+"""
+#Code
+def fix_meerkat(arr):
+    return [arr[2], arr[1], arr[0]]
