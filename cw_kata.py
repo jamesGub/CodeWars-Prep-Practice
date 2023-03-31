@@ -861,6 +861,20 @@ def positive_sum(arr):
             total += num
     return total
 """
+7 kyu
+Regex validate PIN code
+Python:
+"""
+#Code
+def validate_pin(pin):
+    #If length is == 4 or 6, return true
+    #else false
+    
+    if len(pin) == 4 or len(pin) == 6:
+        if pin.isdigit():
+            return True
+    return False
+"""
 8 kyu
 Third angle of a triangle
 Python:
@@ -1090,5 +1104,82 @@ def solution(number):
     return total
 #To calculate multiples, evens, or odds, use modulus. If it returns
 #zero, then it is true. After this we add i to the total and return
+"""
+8 kyu
+Twice as old
+Python:
+"""
+#Code
+def twice_as_old(dad_years_old, son_years_old):
+    
+    twice_aged = son_years_old * 2
+    age_diff = dad_years_old - twice_aged
+    
+    return abs(age_diff)
+"""
+7 kyu
+Digit*Digit
+Python:
+"""
+#Code
+def square_digits(num):
+    digits = list(str(num))
+    
+    result = "".join(str(int(digit) ** 2) for digit in digits)
+    
+    return int(result)
+"""
+7 kyu
+Trimming a string
+Python:
+"""
+#Code
+def trim(phrase, size):
+
+    phase = len(phrase)
+    
+    if phase <= size:
+        return phrase
+    elif size <= 3:
+        return phrase[:size] + "..."
+    else:
+        return phrase[:size-3] + "..."
+"""
+8 kyu
+Keep up the hoop
+Python:
+"""
+#Code
+def hoop_count(n):
+    if n >= 10:
+        return "Great, now move on to tricks"
+    else:
+        return "Keep at it until you get it"
+"""
+8 kyu
+Beginner - Lost Without a Map
+Python:
+"""
+#Code
+def maps(a):
+    factor = 2
+    result = []
+    
+    for num in a: 
+        result.append(num * factor)
         
-        
+    return result
+"""
+8 kyu
+Beginner series #4 Cockroach
+Python:
+"""
+#Code
+def cockroach_speed(s):
+    cm_per_km = 100000
+    
+    cm_per_sec = cm_per_km / 3600
+    
+    speed_in_cm_per_sec = int(s * cm_per_sec)
+    
+    return speed_in_cm_per_sec 
